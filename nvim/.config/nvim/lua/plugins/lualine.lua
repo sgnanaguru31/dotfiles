@@ -8,6 +8,9 @@ return {
             theme = "gruvbox-material",
             component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
+            -- disabled_filetypes = {
+            --     statusline = { "nofile" }, -- or whatever the filetype is
+            -- },
         },
         sections = {
             lualine_a = { "filename" },
@@ -18,7 +21,7 @@ return {
             lualine_z = { "location" },
         },
         inactive_sections = {
-            lualine_a = {},
+            lualine_a = { "filename" },
             lualine_b = {},
             lualine_c = {},
             lualine_x = {},

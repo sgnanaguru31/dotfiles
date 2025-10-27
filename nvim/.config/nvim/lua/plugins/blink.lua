@@ -24,7 +24,6 @@ return {
         blink.setup({
             keymap = {
                 preset = "default",
-                ["<C-h>"] = { "show_documentation", "fallback" },
                 ["<C-k>"] = { "select_prev", "fallback" },
                 ["<C-j>"] = { "select_next", "fallback" },
                 ["<C-l>"] = { "select_and_accept" },
@@ -35,7 +34,7 @@ return {
                     border = "rounded",
                 },
                 documentation = {
-                    auto_show = true,
+                    auto_show = false,
                     auto_show_delay_ms = 500,
                     window = {
                         border = "rounded",
@@ -45,7 +44,7 @@ return {
             },
 
             sources = {
-                default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+                default = { "lsp", "path", "snippets", "buffer", "lazydev" },
                 providers = {
                     lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
                     path = {

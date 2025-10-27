@@ -1,18 +1,18 @@
 window#waybar {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: Cantarell, NotoSans, FontAwesome, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family:
+    Cantarell, NotoSans, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   font-size: 14px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   font-style: normal;
 }
 
 #tray {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: Cantarell, NotoSans, FontAwesome, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family:
+    Cantarell, NotoSans, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   font-size: 15px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   font-style: normal;
 }
 
@@ -56,7 +56,7 @@ button {
   /* box-shadow: inset 0 -3px transparent; */
   /* Avoid rounded borders under each button name */
   border: none;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin-left: 2px;
   margin-right: 2px;
 }
@@ -122,14 +122,15 @@ button:hover {
 #window {
   /* padding: 0px 0px 0px 0px; */
   /* padding: 0px 0px 0px 0px; */
-  padding: 0rem 0.75rem 0rem 0.75rem;
+  padding: 0rem 0.5rem 0rem 0.5rem;
   /* color: #ffffff; */
-  border-radius: 10px;
+  /* border-radius: 10px; */
   /* margin: 1px 6px; */
   background-color: #282828;
   color: #ebdbb2;
+  /* color: #d4d4d4; */
   /* border: 1px solid rgba(100, 114, 125, 0.5); */
-  border: 1px solid rgba(59, 59, 59, 1);
+  border: 1px solid rgba(59, 59, 59, 0.8);
 }
 
 /* adjust this padding for overrall height of waybar and the font */

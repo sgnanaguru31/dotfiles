@@ -79,7 +79,7 @@ return {
 
                 sources = {
                     explorer = {
-                        auto_close = true,
+                        auto_close = false,
                         hidden = true,
                         follow_file = true,
                         indent = {

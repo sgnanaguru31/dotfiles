@@ -1,3 +1,5 @@
+-- TODO: This doesnt store the size and layout of the windows
+
 local M = {}
 
 local saved_layout = nil

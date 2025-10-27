@@ -10,5 +10,6 @@ return {
         win = {
             border = "rounded",
         },
+        delay = 2000,
     },
 }

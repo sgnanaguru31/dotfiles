@@ -37,10 +37,30 @@ vim.keymap.set("n", "<leader>sH", "<C-w><S-h>", { desc = "Move window to bottom"
 vim.keymap.set("n", "<leader>sL", "<C-w><S-l>", { desc = "Move window to right" })
 
 -- Window resize
-vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Increase window height" })
-vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
+-- vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Increase window height" })
+-- vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
+-- vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
+-- vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
+
+vim.keymap.set("n", "<C-Up>", function()
+    local cmd = ":resize +2<CR>"
+    vim.cmd(cmd)
+end, { desc = "Increase window height" })
+
+vim.keymap.set("n", "<C-Down>", function()
+    local cmd = ":resize -2<CR>"
+    vim.cmd(cmd)
+end, { desc = "Decrease window height" })
+
+vim.keymap.set("n", "<C-Left>", function()
+    local cmd = ":vertical resize -2<CR>"
+    vim.cmd(cmd)
+end, { desc = "Decrease window width" })
+
+vim.keymap.set("n", "<C-Right>", function()
+    local cmd = ":vertical resize +2<CR>"
+    vim.cmd(cmd)
+end, { desc = "Increase window width" })
 
 -- Better window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
@@ -58,14 +78,38 @@ vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab"
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- Move lines up/down
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+-- vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+-- vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+-- vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+-- vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+vim.keymap.set("n", "<A-j>", function()
+    local cmd = ":m .+1<CR>=="
+    vim.cmd(cmd)
+end, { desc = "Move line down" })
+
+vim.keymap.set("n", "<A-k>", function()
+    local cmd = ":m .-2<CR>=="
+    vim.cmd(cmd)
+end, { desc = "Move line up" })
+
+vim.keymap.set("v", "<A-j>", function()
+    local cmd = ":m '>+1<CR>gv=gv"
+    vim.cmd(cmd)
+end, { desc = "Move selection down" })
+
+vim.keymap.set("v", "<A-k>", function()
+    local cmd = ":m '<-2<CR>gv=gv"
+    vim.cmd(cmd)
+end, { desc = "Move selection up" })
 
 -- Better indenting in visual mode
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
+
+vim.keymap.set("n", "<leader>mh", function()
+    vim.cmd("Noice history")
+end, { desc = "Noice Message History" })
 
 -- Quick file navigation
 -- vim.keymap.set("n", "<leader>ee", ":Explore<CR>", { desc = "Open file explorer" })
@@ -102,3 +146,5 @@ vim.keymap.set("n", "<leader>dl", search_string, { desc = "Search string in curr
 --         end)
 --     end)
 -- end, { desc = "Find and Replace with confirmation" })
+
+vim.keymap.set("v", "<leader>bl", "<cmd>ObsidianLink<cr>", { desc = "Link to Obsidian note" })
